@@ -17,8 +17,7 @@ const HeroSection = () => {
           Community-Based Real Estate
         </p>
         <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-primary-foreground animate-fade-up">
-          Building Communities,<br />
-          <span className="text-gradient">Shaping Futures</span>
+          <span className="text-gradient">Developing with Purpose</span>
         </h1>
         <p className="max-w-2xl mx-auto text-surface-dark-foreground/70 text-lg md:text-xl mb-10 font-body font-light animate-fade-up" style={{ animationDelay: "0.2s" }}>
           Coniva Holdings Ltd transforms visions into landmark developments — rooted in trust, driven by community, designed for the world.

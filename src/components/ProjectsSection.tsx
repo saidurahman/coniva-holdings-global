@@ -6,23 +6,37 @@ import { MapPin } from "lucide-react";
 const projects = [
   {
     image: property1,
-    title: "Coniva Green Residences",
-    location: "Banani, Dhaka",
+    title: "Coniva American City",
+    location: "Purbachal, Dhaka",
+    type: "Township",
+    status: "Upcoming",
+  },
+  {
+    image: property2,
+    title: "Coniva Ashulia Project",
+    location: "Ashulia, Dhaka",
+    type: "Residential",
+    status: "Upcoming",
+  },
+  {
+    image: property3,
+    title: "Coniva Uttara Heights",
+    location: "Uttara, Dhaka",
+    type: "Residential",
+    status: "Upcoming",
+  },
+  {
+    image: property1,
+    title: "Coniva Aftabnagar Residences",
+    location: "Aftabnagar, Dhaka",
     type: "Residential",
     status: "Upcoming",
   },
   {
     image: property2,
-    title: "Coniva Township",
-    location: "Purbachal, Dhaka",
-    type: "Community",
-    status: "Planning Phase",
-  },
-  {
-    image: property3,
-    title: "Coniva Business Hub",
-    location: "Gulshan, Dhaka",
-    type: "Commercial",
+    title: "Coniva Resort & Retreat",
+    location: "Location TBA",
+    type: "Resort",
     status: "Upcoming",
   },
 ];
@@ -43,7 +57,7 @@ const ProjectsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((p) => (
             <div
               key={p.title}
