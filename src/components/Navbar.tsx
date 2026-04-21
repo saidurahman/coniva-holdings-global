@@ -28,8 +28,8 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between">
-        <a href="#home">
-          <img src={logo} alt="Coniva Holdings Ltd" className="h-10 md:h-12" />
+        <a href="#home" className="flex items-center bg-surface-dark/40 backdrop-blur-sm rounded-md px-3 py-1.5">
+          <img src={logo} alt="Coniva Holdings Ltd" className="h-12 md:h-16 w-auto" />
         </a>
 
         {/* Desktop */}

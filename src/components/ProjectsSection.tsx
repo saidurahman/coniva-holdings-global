@@ -89,7 +89,7 @@ const ProjectsSection = () => {
                 <img
                   src={logoMark}
                   alt="Coniva Holdings Ltd watermark"
-                  className="absolute bottom-3 left-3 h-12 w-auto opacity-90 drop-shadow-lg"
+                  className="absolute bottom-3 left-3 h-16 w-auto bg-black/60 backdrop-blur-sm rounded-md p-1.5 drop-shadow-xl"
                   loading="lazy"
                 />
               </div>
