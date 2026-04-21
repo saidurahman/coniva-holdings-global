@@ -39,7 +39,7 @@ const ContactSection = () => {
             <MapPin className="w-8 h-8 text-primary mb-4" />
             <h3 className="font-heading text-lg font-semibold mb-2">Visit Us</h3>
             <p className="text-surface-dark-foreground/60 font-body text-sm">
-              House 93, Block: D,<br />Banani, Dhaka
+              House 93, Road 13,<br />Block D, Banani, Dhaka
             </p>
           </div>
         </div>

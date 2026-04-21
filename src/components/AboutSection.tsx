@@ -35,7 +35,7 @@ const AboutSection = () => {
             A New Standard in Real Estate
           </h2>
           <p className="text-muted-foreground text-lg font-body leading-relaxed">
-            Coniva Holdings Ltd is a community-based real estate company headquartered in Banani, Dhaka.
+            Coniva Holdings Ltd is a community-based real estate company headquartered at House 93, Road 13, Block D, Banani, Dhaka.
             We are committed to delivering developments that foster belonging, elevate living standards,
             and mark our steps on the global stage.
           </p>
