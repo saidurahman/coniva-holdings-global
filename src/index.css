@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,43 +6,43 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 160 10% 10%;
+    --background: 0 0% 6%;
+    --foreground: 42 55% 78%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 160 10% 10%;
+    --card: 0 0% 8%;
+    --card-foreground: 42 55% 78%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 160 10% 10%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 42 55% 78%;
 
-    --primary: 93 52% 45%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 42 65% 55%;
+    --primary-foreground: 0 0% 6%;
 
-    --secondary: 90 8% 95%;
-    --secondary-foreground: 160 10% 10%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 42 55% 78%;
 
-    --muted: 90 8% 95%;
-    --muted-foreground: 160 5% 45%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 42 20% 65%;
 
-    --accent: 93 52% 45%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 42 65% 55%;
+    --accent-foreground: 0 0% 6%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 90 10% 90%;
-    --input: 90 10% 90%;
-    --ring: 93 52% 45%;
+    --border: 42 30% 22%;
+    --input: 42 30% 22%;
+    --ring: 42 65% 55%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
 
-    --hero-overlay: linear-gradient(135deg, hsla(160, 10%, 5%, 0.85), hsla(93, 30%, 15%, 0.7));
-    --surface-dark: 160 10% 8%;
-    --surface-dark-foreground: 90 10% 92%;
-    --gold: 42 80% 55%;
+    --hero-overlay: linear-gradient(135deg, hsla(0, 0%, 2%, 0.88), hsla(42, 30%, 10%, 0.7));
+    --surface-dark: 0 0% 6%;
+    --surface-dark-foreground: 42 55% 82%;
+    --gold: 42 75% 60%;
 
-    --font-heading: 'Playfair Display', serif;
-    --font-body: 'DM Sans', sans-serif;
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Jost', sans-serif;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -71,7 +71,10 @@
 @layer utilities {
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--gold)));
+    background-image: linear-gradient(135deg, hsl(42 80% 70%), hsl(42 60% 45%), hsl(42 80% 70%));
+  }
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: 0.01em;
   }
   .surface-dark {
     background-color: hsl(var(--surface-dark));
