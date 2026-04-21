@@ -3,7 +3,7 @@ import property2 from "@/assets/property-2.jpg";
 import property3 from "@/assets/property-3.jpg";
 import propertyResort from "@/assets/property-resort.jpg";
 import propertyAgro from "@/assets/property-agro.jpg";
-import logoMark from "@/assets/coniva-logo.png";
+import logoMark from "@/assets/coniva-logo-light.png";
 import { MapPin } from "lucide-react";
 
 const projects = [
