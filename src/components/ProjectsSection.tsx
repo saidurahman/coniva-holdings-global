@@ -1,6 +1,9 @@
 import property1 from "@/assets/property-1.jpg";
 import property2 from "@/assets/property-2.jpg";
 import property3 from "@/assets/property-3.jpg";
+import propertyResort from "@/assets/property-resort.jpg";
+import propertyAgro from "@/assets/property-agro.jpg";
+import logoMark from "@/assets/coniva-logo.png";
 import { MapPin } from "lucide-react";
 
 const projects = [
@@ -13,14 +16,14 @@ const projects = [
   },
   {
     image: property2,
-    title: "Coniva Ashulia Project",
+    title: "Coniva Green Heights, Ashulia",
     location: "Ashulia, Dhaka",
     type: "Residential",
     status: "Upcoming",
   },
   {
     image: property3,
-    title: "Coniva Uttara Heights",
+    title: "Coniva Metro Heights, Uttara",
     location: "Uttara, Dhaka",
     type: "Residential",
     status: "Upcoming",
@@ -33,10 +36,17 @@ const projects = [
     status: "Upcoming",
   },
   {
-    image: property2,
-    title: "Coniva Resort & Retreat",
-    location: "Location TBA",
-    type: "Resort",
+    image: propertyResort,
+    title: "Coniva Hollywood Hill Resort",
+    location: "Cox's Bazar",
+    type: "Hospitality & Resort",
+    status: "Upcoming",
+  },
+  {
+    image: propertyAgro,
+    title: "Coniva Green Agro",
+    location: "Nababganj, Dhaka",
+    type: "Agro",
     status: "Upcoming",
   },
 ];
@@ -72,9 +82,16 @@ const ProjectsSection = () => {
                   width={800}
                   height={600}
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                 <span className="absolute top-3 right-3 bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">
                   {p.status}
                 </span>
+                <img
+                  src={logoMark}
+                  alt="Coniva Holdings Ltd watermark"
+                  className="absolute bottom-3 left-3 h-12 w-auto opacity-90 drop-shadow-lg"
+                  loading="lazy"
+                />
               </div>
               <div className="p-6">
                 <span className="text-xs font-body font-semibold text-primary uppercase tracking-wider">{p.type}</span>

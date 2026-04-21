@@ -1,6 +1,8 @@
-import { Home, Building, Landmark, Briefcase, TreePine, Handshake } from "lucide-react";
+import { Home, Building, Landmark, Briefcase, TreePine, Handshake, Hotel, Sprout } from "lucide-react";
 
 const services = [
+  { icon: Hotel, title: "Hospitality & Resort", desc: "Premium resorts and hospitality experiences in Bangladesh's most scenic destinations." },
+  { icon: Sprout, title: "Agro", desc: "Sustainable agro-developments combining farmland, rivers, and modern agriculture." },
   { icon: Home, title: "Residential Development", desc: "Premium apartments and homes designed for modern family living." },
   { icon: Building, title: "Commercial Spaces", desc: "State-of-the-art office and retail spaces in prime locations." },
   { icon: Landmark, title: "Land Development", desc: "Strategic land acquisition and development for maximum value." },
@@ -25,7 +27,7 @@ const ServicesSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((s) => (
             <div
               key={s.title}

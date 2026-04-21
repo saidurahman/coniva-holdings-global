@@ -47,7 +47,7 @@ const Navbar = () => {
         </ul>
 
         <a
-          href="tel:01681660310"
+          href="tel:+8801634699636"
           className="hidden md:inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2.5 rounded-md text-sm font-semibold hover:opacity-90 transition-opacity"
         >
           Call Now
@@ -92,7 +92,7 @@ const Navbar = () => {
               </li>
             ))}
             <a
-              href="tel:01681660310"
+              href="tel:+8801634699636"
               className="bg-primary text-primary-foreground px-5 py-2.5 rounded-md text-sm font-semibold"
             >
               Call Now
