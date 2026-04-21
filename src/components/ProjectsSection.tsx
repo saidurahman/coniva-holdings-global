@@ -8,6 +8,20 @@ import { MapPin } from "lucide-react";
 
 const projects = [
   {
+    image: propertyResort,
+    title: "Coniva Hollywood Hill Resort",
+    location: "Cox's Bazar",
+    type: "Hospitality & Resort",
+    status: "Upcoming",
+  },
+  {
+    image: propertyAgro,
+    title: "Coniva Green Agro",
+    location: "Nababganj, Dhaka",
+    type: "Agro",
+    status: "Upcoming",
+  },
+  {
     image: property1,
     title: "Coniva American City",
     location: "Purbachal, Dhaka",
@@ -33,20 +47,6 @@ const projects = [
     title: "Coniva Aftabnagar Residences",
     location: "Aftabnagar, Dhaka",
     type: "Residential",
-    status: "Upcoming",
-  },
-  {
-    image: propertyResort,
-    title: "Coniva Hollywood Hill Resort",
-    location: "Cox's Bazar",
-    type: "Hospitality & Resort",
-    status: "Upcoming",
-  },
-  {
-    image: propertyAgro,
-    title: "Coniva Green Agro",
-    location: "Nababganj, Dhaka",
-    type: "Agro",
     status: "Upcoming",
   },
 ];
