@@ -18,12 +18,12 @@ const ContactSection = () => {
 
         <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           <a
-            href="tel:01681660310"
+            href="tel:+8801634699636"
             className="flex flex-col items-center text-center p-8 rounded-lg border border-surface-dark-foreground/10 hover:border-primary/40 transition-colors"
           >
             <Phone className="w-8 h-8 text-primary mb-4" />
             <h3 className="font-heading text-lg font-semibold mb-2">Call Us</h3>
-            <p className="text-surface-dark-foreground/60 font-body text-sm">01681660310</p>
+            <p className="text-surface-dark-foreground/60 font-body text-sm">+880 1634-699636</p>
           </a>
 
           <a
