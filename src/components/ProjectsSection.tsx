@@ -5,47 +5,33 @@ import propertyResort from "@/assets/property-resort.jpg";
 import propertyAgro from "@/assets/property-agro.jpg";
 import logoMark from "@/assets/coniva-logo-light.png";
 import { MapPin } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const projects = [
   {
-    image: propertyResort,
+    images: [propertyResort, property2, property3],
     title: "Coniva Hollywood Hill Resort",
     location: "Cox's Bazar",
     type: "Hospitality & Resort",
     status: "Upcoming",
   },
   {
-    image: propertyAgro,
-    title: "Coniva Green Agro",
+    images: [propertyAgro, property1, property2],
+    title: "Coniva Agro",
     location: "Nababganj, Dhaka",
     type: "Agro",
     status: "Upcoming",
   },
   {
-    image: property1,
-    title: "Coniva American City",
+    images: [property1, property2, property3],
+    title: "Coniva Residential",
     location: "Purbachal, Dhaka",
-    type: "Township",
-    status: "Upcoming",
-  },
-  {
-    image: property2,
-    title: "Coniva Green Heights, Ashulia",
-    location: "Ashulia, Dhaka",
-    type: "Residential",
-    status: "Upcoming",
-  },
-  {
-    image: property3,
-    title: "Coniva Metro Heights, Uttara",
-    location: "Uttara, Dhaka",
-    type: "Residential",
-    status: "Upcoming",
-  },
-  {
-    image: property1,
-    title: "Coniva Aftabnagar Residences",
-    location: "Aftabnagar, Dhaka",
     type: "Residential",
     status: "Upcoming",
   },
@@ -67,31 +53,43 @@ const ProjectsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="mx-auto grid max-w-6xl gap-10">
           {projects.map((p) => (
             <div
               key={p.title}
               className="group rounded-lg overflow-hidden border border-border bg-card shadow-sm hover:shadow-lg transition-shadow"
             >
-              <div className="relative overflow-hidden h-56">
-                <img
-                  src={p.image}
-                  alt={p.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                  width={800}
-                  height={600}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                <span className="absolute top-3 right-3 bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">
-                  {p.status}
-                </span>
-                <img
-                  src={logoMark}
-                  alt="Coniva Holdings Ltd watermark"
-                  className="absolute bottom-3 left-3 h-16 w-auto bg-black/60 backdrop-blur-sm rounded-md p-1.5 drop-shadow-xl"
-                  loading="lazy"
-                />
+              <div className="relative overflow-hidden">
+                <Carousel opts={{ loop: true }} className="w-full">
+                  <CarouselContent className="ml-0">
+                    {p.images.map((image, index) => (
+                      <CarouselItem key={`${p.title}-${index}`} className="pl-0">
+                        <div className="relative h-72 w-full md:h-80">
+                          <img
+                            src={image}
+                            alt={`${p.title} view ${index + 1}`}
+                            className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            loading="lazy"
+                            width={1600}
+                            height={900}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <span className="absolute right-4 top-4 z-10 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
+                    {p.status}
+                  </span>
+                  <img
+                    src={logoMark}
+                    alt="Coniva Holdings Ltd watermark"
+                    className="absolute bottom-4 left-4 z-10 h-16 w-auto rounded-md bg-background/70 p-1.5 backdrop-blur-sm drop-shadow-xl"
+                    loading="lazy"
+                  />
+                  <CarouselPrevious className="left-4 z-10" />
+                  <CarouselNext className="right-4 z-10" />
+                </Carousel>
               </div>
               <div className="p-6">
                 <span className="text-xs font-body font-semibold text-primary uppercase tracking-wider">{p.type}</span>
