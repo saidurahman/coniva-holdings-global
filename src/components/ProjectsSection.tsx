@@ -1,8 +1,12 @@
-import property1 from "@/assets/property-1.jpg";
-import property2 from "@/assets/property-2.jpg";
-import property3 from "@/assets/property-3.jpg";
-import propertyResort from "@/assets/property-resort.jpg";
-import propertyAgro from "@/assets/property-agro.jpg";
+import projectResort1 from "@/assets/project-resort-1.jpg";
+import projectResort3 from "@/assets/project-resort-3.jpg";
+import projectResort4 from "@/assets/project-resort-4.jpg";
+import projectAgro1 from "@/assets/project-agro-1.jpg";
+import projectAgro2 from "@/assets/project-agro-2.jpg";
+import projectAgro3 from "@/assets/project-agro-3.jpg";
+import projectResidential1 from "@/assets/project-residential-1.jpg";
+import projectResidential2 from "@/assets/project-residential-2.jpg";
+import projectResidential3 from "@/assets/project-residential-3.jpg";
 import logoMark from "@/assets/coniva-logo-light.png";
 import { MapPin } from "lucide-react";
 import {
@@ -15,21 +19,21 @@ import {
 
 const projects = [
   {
-    images: [propertyResort, property2, property3],
+    images: [projectResort1, projectResort4, projectResort3],
     title: "Coniva Hollywood Hill Resort",
     location: "Cox's Bazar",
     type: "Hospitality & Resort",
     status: "Upcoming",
   },
   {
-    images: [propertyAgro, property1, property2],
+    images: [projectAgro1, projectAgro2, projectAgro3],
     title: "Coniva Agro",
     location: "Nababganj, Dhaka",
     type: "Agro",
     status: "Upcoming",
   },
   {
-    images: [property1, property2, property3],
+    images: [projectResidential1, projectResidential2, projectResidential3],
     title: "Coniva Residential",
     location: "Purbachal, Dhaka",
     type: "Residential",
