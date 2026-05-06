@@ -1,4 +1,11 @@
-import { Building2, Users, Globe, Shield } from "lucide-react";
+import { Building2, Users, Globe, Shield, Briefcase, Leaf, Palmtree, Landmark } from "lucide-react";
+
+const sisterConcerns = [
+  { name: "Coniva Ltd", icon: Briefcase, desc: "Parent enterprise driving innovation across all verticals." },
+  { name: "Coniva Holdings Ltd", icon: Landmark, desc: "Community-based real estate development & investment." },
+  { name: "Coniva Agro Ltd", icon: Leaf, desc: "Sustainable farming, agro-estates and food production." },
+  { name: "Coniva Resort Ltd", icon: Palmtree, desc: "Premium hospitality, resorts and leisure destinations." },
+];
 
 const values = [
   {
@@ -54,6 +61,35 @@ const AboutSection = () => {
               <p className="text-muted-foreground font-body text-sm leading-relaxed">{v.desc}</p>
             </div>
           ))}
+        </div>
+
+        {/* Sister Concerns */}
+        <div className="mt-20">
+          <div className="max-w-3xl mx-auto text-center mb-10">
+            <p className="text-primary font-body font-semibold text-sm tracking-[0.2em] uppercase mb-3">
+              Our Group
+            </p>
+            <h3 className="font-heading text-2xl md:text-4xl font-bold text-foreground mb-4">
+              Sister Concerns
+            </h3>
+            <p className="text-muted-foreground font-body">
+              A family of companies working together across real estate, agriculture, and hospitality.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {sisterConcerns.map((c) => (
+              <div
+                key={c.name}
+                className="bg-card rounded-lg p-6 border border-border/50 shadow-sm hover:shadow-md hover:border-primary/40 transition-all text-center"
+              >
+                <div className="w-14 h-14 mx-auto rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <c.icon className="w-7 h-7 text-primary" />
+                </div>
+                <h4 className="font-heading text-lg font-semibold text-foreground mb-2">{c.name}</h4>
+                <p className="text-muted-foreground font-body text-sm leading-relaxed">{c.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
