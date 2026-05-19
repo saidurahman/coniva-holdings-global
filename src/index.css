@@ -6,40 +6,46 @@
 
 @layer base {
   :root {
-    --background: 0 0% 6%;
-    --foreground: 42 55% 78%;
+    /* Light, premium real-estate theme — eco-friendly green, black, white */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 8%;
 
-    --card: 0 0% 8%;
-    --card-foreground: 42 55% 78%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
 
-    --popover: 0 0% 8%;
-    --popover-foreground: 42 55% 78%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
 
-    --primary: 42 65% 55%;
-    --primary-foreground: 0 0% 6%;
+    /* Eco green */
+    --primary: 148 55% 28%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 148 50% 42%;
 
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 42 55% 78%;
+    --secondary: 145 30% 96%;
+    --secondary-foreground: 0 0% 8%;
 
-    --muted: 0 0% 12%;
-    --muted-foreground: 42 20% 65%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 38%;
 
-    --accent: 42 65% 55%;
-    --accent-foreground: 0 0% 6%;
+    --accent: 148 55% 28%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 42 30% 22%;
-    --input: 42 30% 22%;
-    --ring: 42 65% 55%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 148 55% 28%;
 
-    --radius: 0.25rem;
+    --radius: 0.5rem;
 
-    --hero-overlay: linear-gradient(135deg, hsla(0, 0%, 2%, 0.88), hsla(42, 30%, 10%, 0.7));
-    --surface-dark: 0 0% 6%;
-    --surface-dark-foreground: 42 55% 82%;
-    --gold: 42 75% 60%;
+    --hero-overlay: linear-gradient(135deg, hsla(148, 50%, 8%, 0.78), hsla(0, 0%, 0%, 0.55));
+    --surface-dark: 148 35% 8%;
+    --surface-dark-foreground: 0 0% 98%;
+    --gold: 148 55% 28%;
+
+    --shadow-elegant: 0 10px 40px -10px hsl(148 55% 28% / 0.18);
+    --gradient-primary: linear-gradient(135deg, hsl(148 55% 28%), hsl(148 50% 42%));
 
     --font-heading: 'Cormorant Garamond', serif;
     --font-body: 'Jost', sans-serif;
@@ -56,31 +62,25 @@
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
+  * { @apply border-border; }
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
-  }
+  h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); letter-spacing: 0.01em; }
 }
 
 @layer utilities {
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(42 80% 70%), hsl(42 60% 45%), hsl(42 80% 70%));
-  }
-  h1, h2, h3, h4, h5, h6 {
-    letter-spacing: 0.01em;
+    background-image: linear-gradient(135deg, hsl(148 55% 60%), hsl(148 45% 80%), hsl(148 55% 60%));
   }
   .surface-dark {
     background-color: hsl(var(--surface-dark));
     color: hsl(var(--surface-dark-foreground));
   }
-  .section-padding {
-    @apply py-20 md:py-28 px-4 md:px-8;
-  }
+  .section-padding { @apply py-20 md:py-28 px-4 md:px-8; }
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  .bg-gradient-primary { background-image: var(--gradient-primary); }
 }
