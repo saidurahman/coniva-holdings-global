@@ -1,149 +1,158 @@
-import projectResort1 from "@/assets/project-resort-1.jpg";
-import projectResort3 from "@/assets/project-resort-3.jpg";
-import projectResort4 from "@/assets/project-resort-4.jpg";
-import projectAgro1 from "@/assets/project-agro-1.jpg";
-import projectAgro2 from "@/assets/project-agro-2.jpg";
-import projectAgro3 from "@/assets/project-agro-3.jpg";
+import { useState } from "react";
+import { MapPin, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import projectResidential1 from "@/assets/project-residential-1.jpg";
 import projectResidential2 from "@/assets/project-residential-2.jpg";
 import projectResidential3 from "@/assets/project-residential-3.jpg";
-import logoMark from "@/assets/coniva-logo-light.png";
-import { MapPin } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import projectAgro1 from "@/assets/project-agro-1.jpg";
+import projectResort1 from "@/assets/project-resort-1.jpg";
+import propertyResort from "@/assets/property-resort.jpg";
 
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+type Status = "Ongoing" | "Upcoming" | "Completed";
 
 type Project = {
-  images: string[];
+  image: string;
   title: string;
   location: string;
-  type: string;
-  status: "Completed" | "Ongoing" | "Upcoming";
+  description: string;
+  features: string[];
+  status: Status;
 };
 
-const allProjects: Project[] = [
+const projects: Project[] = [
   {
-    images: [projectResort1, projectResort4, projectResort3],
+    image: projectResidential1,
+    title: "Bashundhara Riverview",
+    location: "Bashundhara, Dhaka",
+    description: "Premium riverside plots and residences with breathtaking views and serene living.",
+    features: ["Riverfront plots", "Gated community", "Modern infrastructure"],
+    status: "Ongoing",
+  },
+  {
+    image: projectAgro1,
+    title: "Coniva Birulia",
+    location: "Birulia, Savar",
+    description: "Strategically located land project blending nature, accessibility and long-term value.",
+    features: ["Wide internal roads", "Eco-friendly planning", "High ROI location"],
+    status: "Ongoing",
+  },
+  {
+    image: projectResidential2,
+    title: "Coniva Basila",
+    location: "Basila, Dhaka",
+    description: "Smartly planned plots near the heart of Dhaka, designed for urban families and investors.",
+    features: ["City connectivity", "Legal clarity", "Ready to register"],
+    status: "Ongoing",
+  },
+  {
+    image: projectResidential3,
+    title: "Purbachal American City",
+    location: "Purbachal, Dhaka",
+    description: "World-class township concept with American-style residential planning and amenities.",
+    features: ["Township layout", "Parks & amenities", "Premium addresses"],
+    status: "Ongoing",
+  },
+  {
+    image: projectResort1,
     title: "Coniva Hollywood Hill Resort",
     location: "Cox's Bazar",
-    type: "Hospitality & Resort",
+    description: "Hill-side luxury resort experience with sustainable architecture and curated hospitality.",
+    features: ["Hill views", "Wellness facilities", "Boutique hospitality"],
     status: "Upcoming",
   },
   {
-    images: [projectAgro1, projectAgro2, projectAgro3],
-    title: "Coniva Agro",
-    location: "Nababganj, Dhaka",
-    type: "Agro",
-    status: "Upcoming",
-  },
-  {
-    images: [projectResidential1, projectResidential2, projectResidential3],
-    title: "Coniva Residential",
-    location: "Purbachal, Dhaka",
-    type: "Residential",
+    image: propertyResort,
+    title: "Coniva Eco Retreat",
+    location: "Sylhet",
+    description: "An upcoming nature retreat designed for slow living, wellness and family escapes.",
+    features: ["Eco architecture", "Forest-side villas", "Wellness programs"],
     status: "Upcoming",
   },
 ];
 
-const categories: Array<Project["status"]> = ["Completed", "Ongoing", "Upcoming"];
-
-const ProjectGrid = ({ items }: { items: Project[] }) => {
-  if (items.length === 0) {
-    return (
-      <div className="rounded-lg border border-dashed border-border bg-card p-12 text-center">
-        <p className="font-heading text-xl font-semibold text-foreground mb-2">Coming Soon</p>
-        <p className="text-muted-foreground font-body text-sm">
-          Exciting projects in this category will be announced shortly.
-        </p>
-      </div>
-    );
-  }
-  return (
-    <div className="mx-auto grid max-w-6xl gap-10">
-      {items.map((p) => (
-        <div
-          key={p.title}
-          className="group rounded-lg overflow-hidden border border-border bg-card shadow-sm hover:shadow-lg transition-shadow"
-        >
-          <div className="relative overflow-hidden">
-            <Carousel opts={{ loop: true }} className="w-full">
-              <CarouselContent className="ml-0">
-                {p.images.map((image, index) => (
-                  <CarouselItem key={`${p.title}-${index}`} className="pl-0">
-                    <div className="relative h-72 w-full md:h-80">
-                      <img
-                        src={image}
-                        alt={`${p.title} view ${index + 1}`}
-                        className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        loading="lazy"
-                        width={1600}
-                        height={900}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <span className="absolute right-4 top-4 z-10 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
-                {p.status}
-              </span>
-              <img
-                src={logoMark}
-                alt="Coniva Holdings Ltd watermark"
-                className="absolute bottom-4 left-4 z-10 h-16 w-auto rounded-md bg-background/70 p-1.5 backdrop-blur-sm drop-shadow-xl"
-                loading="lazy"
-              />
-              <CarouselPrevious className="left-4 z-10" />
-              <CarouselNext className="right-4 z-10" />
-            </Carousel>
-          </div>
-          <div className="p-6">
-            <span className="text-xs font-body font-semibold text-primary uppercase tracking-wider">{p.type}</span>
-            <h3 className="font-heading text-xl font-semibold text-foreground mt-2 mb-2">{p.title}</h3>
-            <div className="flex items-center gap-1 text-muted-foreground text-sm">
-              <MapPin className="w-4 h-4" />
-              <span>{p.location}</span>
-            </div>
-          </div>
-        </div>
-      ))}
+const ProjectCard = ({ p }: { p: Project }) => (
+  <article className="group rounded-xl overflow-hidden border border-border bg-card hover:shadow-elegant transition-all">
+    <div className="relative h-56 overflow-hidden">
+      <img src={p.image} alt={`${p.title} — ${p.location}`} loading="lazy" className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500" />
+      <span className="absolute top-3 right-3 bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">{p.status}</span>
     </div>
-  );
-};
+    <div className="p-6">
+      <h3 className="font-heading text-2xl font-semibold text-foreground">{p.title}</h3>
+      <div className="flex items-center gap-1 text-muted-foreground text-sm mt-1 mb-3">
+        <MapPin className="w-4 h-4 text-primary" />
+        <span>{p.location}</span>
+      </div>
+      <p className="text-muted-foreground font-body text-sm leading-relaxed mb-4">{p.description}</p>
+      <ul className="mb-5 space-y-1">
+        {p.features.map((f) => (
+          <li key={f} className="text-sm text-foreground/80 flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary" /> {f}
+          </li>
+        ))}
+      </ul>
+      <div className="flex gap-3">
+        <Button size="sm" className="flex-1">View Details <ArrowRight className="w-4 h-4" /></Button>
+        <Button asChild size="sm" variant="outline" className="flex-1">
+          <a href="#contact">Contact Us</a>
+        </Button>
+      </div>
+    </div>
+  </article>
+);
+
+const categories: Status[] = ["Ongoing", "Upcoming", "Completed"];
 
 const ProjectsSection = () => {
+  const [filter, setFilter] = useState<string>("All");
+  const types = ["All", "Residential", "Resort", "Land"];
+
   return (
-    <section id="projects" className="section-padding bg-background">
+    <section id="projects" className="section-padding bg-secondary">
       <div className="container mx-auto">
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <p className="text-primary font-body font-semibold text-sm tracking-[0.2em] uppercase mb-3">
-            Our Projects
-          </p>
-          <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-6">
-            Landmark Developments
-          </h2>
+        <div className="max-w-3xl mx-auto text-center mb-10">
+          <p className="text-primary font-body font-semibold text-sm tracking-[0.2em] uppercase mb-3">Our Projects</p>
+          <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-6">Landmark Real Estate Projects</h2>
           <p className="text-muted-foreground text-lg font-body">
-            Each project is a testament to our commitment to quality, community, and innovation.
+            Trusted land and residential projects across Bashundhara, Purbachal, Birulia and Basila.
           </p>
         </div>
 
-        <Tabs defaultValue="Upcoming" className="w-full">
-          <TabsList className="mx-auto mb-10 grid w-full max-w-md grid-cols-3">
-            {categories.map((c) => (
-              <TabsTrigger key={c} value={c}>{c}</TabsTrigger>
-            ))}
-          </TabsList>
-          {categories.map((c) => (
-            <TabsContent key={c} value={c}>
-              <ProjectGrid items={allProjects.filter((p) => p.status === c)} />
-            </TabsContent>
+        <div className="flex flex-wrap justify-center gap-2 mb-8">
+          {types.map((t) => (
+            <button
+              key={t}
+              onClick={() => setFilter(t)}
+              className={`text-sm px-4 py-2 rounded-full border transition-colors ${
+                filter === t ? "bg-primary text-primary-foreground border-primary" : "border-border text-foreground/70 hover:border-primary/40"
+              }`}
+            >
+              {t}
+            </button>
           ))}
+        </div>
+
+        <Tabs defaultValue="Ongoing" className="w-full">
+          <TabsList className="mx-auto mb-10 grid w-full max-w-md grid-cols-3">
+            {categories.map((c) => (<TabsTrigger key={c} value={c}>{c}</TabsTrigger>))}
+          </TabsList>
+          {categories.map((c) => {
+            const items = projects.filter((p) => p.status === c);
+            return (
+              <TabsContent key={c} value={c}>
+                {items.length === 0 ? (
+                  <div className="rounded-xl border border-dashed border-border bg-card p-12 text-center">
+                    <p className="font-heading text-2xl font-semibold text-foreground mb-2">Coming Soon</p>
+                    <p className="text-muted-foreground font-body">Exciting {c.toLowerCase()} projects will be announced shortly.</p>
+                  </div>
+                ) : (
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {items.map((p) => (<ProjectCard key={p.title} p={p} />))}
+                  </div>
+                )}
+              </TabsContent>
+            );
+          })}
         </Tabs>
       </div>
     </section>
