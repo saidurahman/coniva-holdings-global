@@ -30,7 +30,7 @@ const ContactInfoSection = () => {
           </div>
           <div className="rounded-xl overflow-hidden border border-border min-h-[360px] shadow-elegant">
             <iframe
-              title="Coniva Ltd Office Location"
+              title="Coniva Group Office Location"
               src="https://www.google.com/maps?q=Banani,+Dhaka,+Bangladesh&output=embed"
               className="w-full h-full min-h-[360px]"
               loading="lazy"

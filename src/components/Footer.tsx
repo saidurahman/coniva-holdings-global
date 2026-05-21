@@ -8,10 +8,10 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary"><Leaf className="w-5 h-5 text-primary-foreground" /></span>
-              <span className="font-heading text-2xl font-bold">Coniva <span className="text-primary/80">Ltd</span></span>
+              <span className="font-heading text-2xl font-bold">Coniva <span className="text-primary/80">Group</span></span>
             </div>
             <p className="text-white/60 text-sm font-body leading-relaxed">
-              A trusted real estate company in Bangladesh — building sustainable communities and long-term value.
+              A trusted Bangladeshi conglomerate across real estate, agro, hospitality, travel and business services.
             </p>
           </div>
           <div>
@@ -25,9 +25,13 @@ const Footer = () => {
           <div>
             <h4 className="font-heading text-lg font-semibold mb-4">Sister Concerns</h4>
             <ul className="space-y-2 text-sm text-white/60">
+              <li>Coniva Ltd</li>
               <li>Coniva Holdings Ltd</li>
-              <li>Coniva Agro Ltd</li>
-              <li>Coniva Resort Ltd</li>
+              <li>Coniva Agro Industries Ltd</li>
+              <li>Coniva Hotel & Resort Ltd</li>
+              <li>Coniva Tours & Travels</li>
+              <li>Coniva Business Club Ltd</li>
+              <li>Coniva Business & Marketing Solution Ltd</li>
             </ul>
           </div>
           <div>
@@ -40,7 +44,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-white/10 pt-6 text-center text-white/40 text-xs">
-          © {new Date().getFullYear()} Coniva Ltd. All rights reserved.
+          © {new Date().getFullYear()} Coniva Group. All rights reserved.
         </div>
       </div>
     </footer>
