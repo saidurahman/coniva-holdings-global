@@ -32,7 +32,7 @@ const Navbar = () => {
             <Leaf className="h-5 w-5 text-primary-foreground" />
           </span>
           <span className="font-heading text-2xl font-bold tracking-wide uppercase">
-            Coniva <span className="text-primary">Ltd</span>
+            Coniva <span className="text-primary">Group</span>
           </span>
         </a>
 

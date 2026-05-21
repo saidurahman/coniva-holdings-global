@@ -53,7 +53,7 @@ const HeroSection = () => {
       {/* Hero content */}
       <div className="relative z-10 container mx-auto flex min-h-screen flex-col justify-center px-6 md:px-10">
         <div key={i} className="max-w-3xl animate-fade-up">
-          <p className="text-primary text-xs md:text-sm tracking-[0.4em] uppercase mb-5 font-body">Coniva Ltd · Real Estate Bangladesh</p>
+          <p className="text-primary text-xs md:text-sm tracking-[0.4em] uppercase mb-5 font-body">Coniva Group · Bangladesh</p>
           <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[1.05] uppercase tracking-tight">
             {slides[i].title}
           </h1>
