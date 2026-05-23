@@ -35,7 +35,7 @@ const HeroSection = () => {
       {/* Horizontal sliding track */}
       <div
         className="absolute inset-0 flex h-full transition-transform duration-[1200ms] ease-[cubic-bezier(0.65,0,0.35,1)]"
-        style={{ transform: `translateX(-${i * 100}%)`, width: `${slides.length * 100}%` }}
+        style={{ transform: `translateX(-${i * 100}vw)`, width: `${slides.length * 100}vw` }}
       >
         {slides.map((s, idx) => (
           <div key={idx} className="relative h-full w-screen shrink-0">
