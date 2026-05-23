@@ -34,11 +34,11 @@ const HeroSection = () => {
     <section id="home" className="relative min-h-screen w-full overflow-hidden bg-black">
       {/* Horizontal sliding track */}
       <div
-        className="absolute inset-0 flex h-full w-full transition-transform duration-[1200ms] ease-[cubic-bezier(0.65,0,0.35,1)]"
+        className="absolute inset-0 flex h-full transition-transform duration-[1200ms] ease-[cubic-bezier(0.65,0,0.35,1)]"
         style={{ transform: `translateX(-${i * 100}%)`, width: `${slides.length * 100}%` }}
       >
         {slides.map((s, idx) => (
-          <div key={idx} className="relative h-full shrink-0" style={{ width: `${100 / slides.length}%` }}>
+          <div key={idx} className="relative h-full w-screen shrink-0">
             <img
               src={s.img}
               alt={s.title}
