@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
-import { Phone, ChevronRight } from "lucide-react";
-import slide1 from "@/assets/project-resort-1.jpg";
-import slide2 from "@/assets/project-residential-1.jpg";
-import slide3 from "@/assets/project-residential-3.jpg";
+import { Phone, ChevronRight, ChevronLeft } from "lucide-react";
+import slide1 from "@/assets/hero-building-1.jpg";
+import slide2 from "@/assets/hero-resort-1.jpg";
+import slide3 from "@/assets/hero-building-2.jpg";
+import slide4 from "@/assets/hero-resort-2.jpg";
 
 const slides = [
   { img: slide1, title: "Redefining Happiness", sub: "Premium addresses crafted for life's finest moments." },
-  { img: slide2, title: "Boulevard that makes your heart sing", sub: "Curated communities across Dhaka's most coveted locations." },
-  { img: slide3, title: "An oasis of comfort", sub: "Sustainable design, timeless architecture, lasting value." },
+  { img: slide2, title: "An Oasis of Comfort", sub: "Beachfront resorts where serenity meets luxury." },
+  { img: slide3, title: "Boulevards That Inspire", sub: "Curated communities across Bangladesh's most coveted locations." },
+  { img: slide4, title: "Nature Meets Elegance", sub: "Premium retreats embraced by mountains and greenery." },
 ];
 
 const quickLinks = [
@@ -25,27 +27,55 @@ const HeroSection = () => {
     return () => clearInterval(t);
   }, []);
 
+  const prev = () => setI((p) => (p - 1 + slides.length) % slides.length);
+  const next = () => setI((p) => (p + 1) % slides.length);
+
   return (
     <section id="home" className="relative min-h-screen w-full overflow-hidden bg-black">
-      {slides.map((s, idx) => (
-        <img
-          key={idx}
-          src={s.img}
-          alt={s.title}
-          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1500ms] ${i === idx ? "opacity-100" : "opacity-0"}`}
-          loading={idx === 0 ? "eager" : "lazy"}
-        />
-      ))}
+      {/* Horizontal sliding track */}
+      <div
+        className="absolute inset-0 flex h-full w-full transition-transform duration-[1200ms] ease-[cubic-bezier(0.65,0,0.35,1)]"
+        style={{ transform: `translateX(-${i * 100}%)`, width: `${slides.length * 100}%` }}
+      >
+        {slides.map((s, idx) => (
+          <div key={idx} className="relative h-full shrink-0" style={{ width: `${100 / slides.length}%` }}>
+            <img
+              src={s.img}
+              alt={s.title}
+              className="h-full w-full object-cover"
+              loading={idx === 0 ? "eager" : "lazy"}
+              width={1920}
+              height={1080}
+            />
+          </div>
+        ))}
+      </div>
       <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20" />
 
+      {/* Arrow controls */}
+      <button
+        aria-label="Previous slide"
+        onClick={prev}
+        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 hidden md:flex h-12 w-12 items-center justify-center rounded-full border border-white/30 bg-black/30 text-white hover:bg-primary hover:border-primary transition-all"
+      >
+        <ChevronLeft className="h-6 w-6" />
+      </button>
+      <button
+        aria-label="Next slide"
+        onClick={next}
+        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 hidden md:flex h-12 w-12 items-center justify-center rounded-full border border-white/30 bg-black/30 text-white hover:bg-primary hover:border-primary transition-all"
+      >
+        <ChevronRight className="h-6 w-6" />
+      </button>
+
       {/* Slide dots */}
-      <div className="absolute right-6 md:right-10 top-1/2 -translate-y-1/2 z-20 flex flex-col gap-4">
+      <div className="absolute left-1/2 -translate-x-1/2 bottom-28 z-20 flex gap-3">
         {slides.map((_, idx) => (
           <button
             key={idx}
             aria-label={`Go to slide ${idx + 1}`}
             onClick={() => setI(idx)}
-            className={`h-2.5 w-2.5 rounded-full border border-white/70 transition-all ${i === idx ? "bg-white scale-125" : "bg-transparent"}`}
+            className={`h-1 rounded-full border border-white/70 transition-all ${i === idx ? "bg-white w-10" : "bg-transparent w-6"}`}
           />
         ))}
       </div>
